@@ -50,7 +50,7 @@
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            <audio id=“bgMusic” controls src="/bgms/bgm2.ogg" autoplay="autoplay" loop="true"></audio>
+            <audio controls src="/bgms/bgm2.ogg" autoplay="autoplay" loop="true"></audio>
         </div>
 
         <script>
@@ -58,7 +58,6 @@
 
     <script>
     (function(){
-        autoPlayAudio();
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
@@ -215,22 +214,24 @@
 
         runAsync().start();
     })();
-
-    function autoPlayAudio() {
-        wx.config({
-            // 配置信息, 即使不正确也能使用 wx.ready
-            debug: false,
-            appId: '',
-            timestamp: 1,
-            nonceStr: '',
-            signature: '',
-            jsApiList: []
-        });
-        wx.ready(function() {
-            var globalAudio=document.getElementById("bgMusic");
-            globalAudio.play();
-        });
-    };
+    function baseMp3PlayIOS(id) {
+        let audio = document.getElementById(id),
+            my_play = function(){
+                audio.play();
+                document.removeEventListener("touchstart",my_play, false);
+            };
+        audio.play(); 
+        // 使用微信WeixinJSBridgeReady 监听在微信浏览器中页面加载完成之后执行
+        document.addEventListener("WeixinJSBridgeReady", function () {//微信
+            my_play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function() {//易信
+            my_play();
+        }, false);
+        // 监听 touchstart 事件，在用户触摸到项目页面的时候触发
+        document.addEventListener("touchstart",my_play, false);
+    }
+    baseMp3PlayIOS('audioBoom')
     </script>
 
 
