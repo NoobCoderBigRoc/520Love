@@ -52,9 +52,11 @@
             </div>
             <audio src="love.mp3" autoplay="autoplay"></audio>
         </div>
+
+        <div id="music"> </div>
     
-    <script>
-    </script>
+        <script>
+        </script>
 
     <script>
     (function(){
@@ -214,6 +216,40 @@
 
         runAsync().start();
     })();
+
+    window.onload = function() {
+        // music location
+        var musicList = ["/bgms/bgm1.flac"]
+        playMusic(musicList);
+    }
+
+    function playMusic(musicList){
+        var myAudio = new Audio();
+        // preload
+        myAudio.preload = false;
+        // hide or 
+        myAudio.controls = true;
+        myAudio.hidden = true;
+        // get last song then delete;
+        var src = musicList.pop();
+        myAudio.src = src;
+        // put last song to front ----> loop
+        musicList.unshift(src);
+        // play to the end ----> playEnabledHandler
+        myAudio.addEventListener("ended", playEndedHandler, flase);
+        // play the current
+        myAudio.play();
+        document.getElementById("music").appendChild(myAudio);
+        // turn off the loop
+        myAudio.loop = flase;
+        
+        function playEnabledHandler() {
+            src = musicList.pop();
+            myAudio.src = src;
+            musicList.unshift(src);
+            myAudio.play();
+        }
+    }
     </script>
 
 

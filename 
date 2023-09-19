@@ -1,0 +1,59 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 472a894..1f7ebcb 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -52,9 +52,11 @@[m
+             </div>[m
+             <audio src="love.mp3" autoplay="autoplay"></audio>[m
+         </div>[m
+[32m+[m
+[32m+[m[32m        <div id="music"> </div>[m
+     [m
+[31m-    <script>[m
+[31m-    </script>[m
+[32m+[m[32m        <script>[m
+[32m+[m[32m        </script>[m
+ [m
+     <script>[m
+     (function(){[m
+[36m@@ -214,6 +216,40 @@[m
+ [m
+         runAsync().start();[m
+     })();[m
+[32m+[m
+[32m+[m[32m    window.onload = function() {[m
+[32m+[m[32m        // music location[m
+[32m+[m[32m        var musicList = ["/bgms/bgm1.flac"][m
+[32m+[m[32m        playMusic(musicList);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    function playMusic(musicList){[m
+[32m+[m[32m        var myAudio = new Audio();[m
+[32m+[m[32m        // preload[m
+[32m+[m[32m        myAudio.preload = false;[m
+[32m+[m[32m        // hide or[m[41m [m
+[32m+[m[32m        myAudio.controls = true;[m
+[32m+[m[32m        myAudio.hidden = true;[m
+[32m+[m[32m        // get last song then delete;[m
+[32m+[m[32m        var src = musicList.pop();[m
+[32m+[m[32m        myAudio.src = src;[m
+[32m+[m[32m        // put last song to front ----> loop[m
+[32m+[m[32m        musicList.unshift(src);[m
+[32m+[m[32m        // play to the end ----> playEnabledHandler[m
+[32m+[m[32m        myAudio.addEventListener("ended", playEndedHandler, flase);[m
+[32m+[m[32m        // play the current[m
+[32m+[m[32m        myAudio.play();[m
+[32m+[m[32m        document.getElementById("music").appendChild(myAudio);[m
+[32m+[m[32m        // turn off the loop[m
+[32m+[m[32m        myAudio.loop = flase;[m
+[32m+[m[41m        [m
+[32m+[m[32m        function playEnabledHandler() {[m
+[32m+[m[32m            src = musicList.pop();[m
+[32m+[m[32m            myAudio.src = src;[m
+[32m+[m[32m            musicList.unshift(src);[m
+[32m+[m[32m            myAudio.play();[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+     </script>[m
+ [m
+ [m
