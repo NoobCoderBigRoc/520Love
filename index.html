@@ -59,7 +59,7 @@
         <!-- <audio controls autoplay="autoplay" loop="true">
             <source src="/bgms/bgm2.ogg">
         </audio> -->
-
+        <button id="unmute">Unmute</button>
         <button id="play" onclick="onclick">播放我</button>
     </div>
 
@@ -241,7 +241,7 @@
                     source.start();
                 };
 
-                var URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/Yodel_Sound_Effect.mp3';
+                var URL = 'bgms/bgm2.ogg';
                 var AudioContext = window.AudioContext || window.webkitAudioContext;
                 var context = new AudioContext(); // Make it crossbrowser
                 var gainNode = context.createGain();
@@ -265,9 +265,9 @@
                 };
 
                 // Play the file every 2 seconds. You won't hear it in iOS until the audio context is unlocked.
-                window.setInterval(function () {
-                    play(yodelBuffer);
-                }, 5000);
+                // window.setInterval(function () {
+                //     play(yodelBuffer);
+                // }, 5000);
 
 
                 //////////////////////////////////////////////////
