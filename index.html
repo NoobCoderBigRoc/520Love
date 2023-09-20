@@ -50,13 +50,20 @@
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            <audio id="audioBoom" controls autoplay="autoplay" loop="true">
+            <!-- <audio controls autoplay="autoplay" loop="true">
                 <source src="/bgms/bgm2.ogg" type="audio/ogg">
-                <button onclick="play()">Play Audio</button>
-            </audio>
+            </audio> -->
+            <button onclick="play()">Play Audio</button>
         </div>
 
         <script>
+        var audio = new Audio('/bgms/bgm2.ogg');
+        audio.play();
+        audio.autoplay = true;
+        function play() {
+            var audio = new Audio('/bgms/bgm2.ogg');
+            audio.play();
+        }
         </script>
 
     <script>
@@ -217,13 +224,6 @@
 
         runAsync().start();
     })();
-    var audio = new Audio('/bgms/bgm2.ogg');
-    audio.play();
-
-    function play() {
-    var audio = new Audio('/bgms/bgm2.ogg');
-    audio.play();
-    }
     </script>
 
 
