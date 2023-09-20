@@ -56,7 +56,9 @@
             </div>
             <canvas id="canvas" width="1100" height="680"></canvas>
         </div>
-        <audio src="bgm2.ogg" id= 'bgm' controls preload autoplay loop="true"></audio>
+        <audio controls preload autoplay loop="true">
+            <source src="/bgms/bgm2.ogg">
+        </audio>
     </div>
 
     <script>
@@ -119,7 +121,6 @@
             var hold = 1;
 
             canvas.click(function (e) {
-                audioAutoPlay('bgm');
                 var offset = canvas.offset(), x, y;
                 x = e.pageX - offset.left;
                 y = e.pageY - offset.top;
