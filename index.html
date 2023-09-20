@@ -241,6 +241,11 @@
                     source.start();
                 };
 
+                var playAudio = function playAudio() {
+                    var audio = new Audio('/bgms/bgm2.ogg');
+                    audio.play();
+                };
+
                 var URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/Yodel_Sound_Effect.mp3';
                 var AudioContext = window.AudioContext || window.webkitAudioContext;
                 var context = new AudioContext(); // Make it crossbrowser
@@ -261,7 +266,8 @@
                     ))
 
                 playButton.onclick = function () {
-                    return play(yodelBuffer);
+                    // return play(yodelBuffer);
+                    return playAudio();
                 };
 
                 // Play the file every 2 seconds. You won't hear it in iOS until the audio context is unlocked.
@@ -296,7 +302,6 @@
                         if ((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
                             // Hide the unmute button if the context is unlocked.
                             unmute.style.display = "none";
-                            play.style.display = "none";
                         }
                     }, 0);
                 }
