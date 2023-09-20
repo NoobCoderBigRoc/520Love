@@ -52,6 +52,7 @@
             </div>
             <audio id="audioBoom" controls autoplay="autoplay" loop="true">
                 <source src="/bgms/bgm2.ogg" type="audio/ogg">
+                <button onclick="play()">Play Audio</button>
             </audio>
         </div>
 
@@ -216,24 +217,13 @@
 
         runAsync().start();
     })();
-    function baseMp3PlayIOS(id) {
-        let audio = document.getElementById(id),
-            my_play = function(){
-                audio.play();
-                document.removeEventListener("touchstart",my_play, false);
-            };
-        audio.play(); 
-        // 使用微信WeixinJSBridgeReady 监听在微信浏览器中页面加载完成之后执行
-        document.addEventListener("WeixinJSBridgeReady", function () {//微信
-            my_play();
-        }, false);
-        document.addEventListener('YixinJSBridgeReady', function() {//易信
-            my_play();
-        }, false);
-        // 监听 touchstart 事件，在用户触摸到项目页面的时候触发
-        document.addEventListener("touchstart",my_play, false);
+    var audio = new Audio('/bgms/bgm2.ogg');
+    audio.play();
+
+    function play() {
+    var audio = new Audio('/bgms/bgm2.ogg');
+    audio.play();
     }
-    baseMp3PlayIOS('audioBoom')
     </script>
 
 
