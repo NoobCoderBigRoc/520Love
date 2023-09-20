@@ -16,6 +16,7 @@
     <script type="text/javascript" src="./Love_files/jscex-async-powerpack.min.js"></script>
     <script type="text/javascript" src="./Love_files/functions.js" charset="utf-8"></script>
     <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./Love_files/howler.js"></script>
     <link type="text/css" rel="stylesheet" herf="./index.css" />
 </head>
 
@@ -121,6 +122,17 @@
             var hold = 1;
 
             canvas.click(function (e) {
+                var sound = new Howl({
+                    src: ['bgm2.ogg'],
+                    autoplay: true,
+                    loop: true,
+                    volume: 0.5,
+                    onend: function () {
+                        console.log('Finished!');
+                    }
+                });
+
+
                 var offset = canvas.offset(), x, y;
                 x = e.pageX - offset.left;
                 y = e.pageY - offset.top;
