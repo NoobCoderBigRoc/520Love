@@ -241,7 +241,7 @@
                     source.start();
                 };
 
-                var URL = 'bgms/bgm2.ogg';
+                var URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/Yodel_Sound_Effect.mp3';
                 var AudioContext = window.AudioContext || window.webkitAudioContext;
                 var context = new AudioContext(); // Make it crossbrowser
                 var gainNode = context.createGain();
@@ -296,6 +296,7 @@
                         if ((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
                             // Hide the unmute button if the context is unlocked.
                             unmute.style.display = "none";
+                            play.style.display = "none";
                         }
                     }, 0);
                 }
