@@ -222,10 +222,6 @@
             }));
 
             runAsync().start();
-        })();
-
-
-        (function () {
 
             // Check if the browser supports web audio. Safari wants a prefix.
             if ('AudioContext' in window || 'webkitAudioContext' in window) {
@@ -302,8 +298,7 @@
                 // Try to unlock, so the unmute is hidden when not necessary (in most browsers).
                 unlock();
             }
-        }
-        )();
+        })();
 
     </script>
 
