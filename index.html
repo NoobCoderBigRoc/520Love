@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div id="main"> 
+    <div id="main">
         <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a
                 href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a
                 href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
@@ -120,14 +120,6 @@
             var hold = 1;
 
             canvas.click(function (e) {
-                var sound = new Howl({
-                    src: ['./bgm1.mp3'],
-                    autoplay: true,
-                    loop: true,
-                    volume: 1,
-                    html5: true
-                });
-
 
                 var offset = canvas.offset(), x, y;
                 x = e.pageX - offset.left;
@@ -137,6 +129,14 @@
                     canvas.unbind("click");
                     canvas.unbind("mousemove");
                     canvas.removeClass('hand');
+
+                    var sound = new Howl({
+                        src: ['./bgm1.mp3'],
+                        autoplay: true,
+                        loop: true,
+                        volume: 1,
+                        html5: true
+                    });
                 }
             }).mousemove(function (e) {
                 var offset = canvas.offset(), x, y;
