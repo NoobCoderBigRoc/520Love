@@ -4,9 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>维和素包子</title>
-
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <title>俺の本音</title>
 
     <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
     <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
@@ -20,32 +18,6 @@
     <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
     <script type="text/javascript" src="./Love_files/howler.js"></script>
 
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        html, body {
-            height: 100%;
-            width: 100%;
-        }
-        canvas {
-            display: block;
-        }
-    </style>
-
-    <script type="text/javascript">
-        $(function() {
-            $(window).resize(resizeCanvas);
-            resizeCanvas();
-        });
-
-        function resizeCanvas() {
-            $("canvas").attr("width", $(window).get(0).innerWidth);
-            $("canvas").attr("height", $(window).get(0).innerHeight);
-        }
-    </script>
-
 </head>
 
 <body>
@@ -56,39 +28,36 @@
         <div id="wrap">
             <div id="text">
                 <div id="code">
-                    <span class="say">愛しい　夏先生へ</span><br>
+                    <span class="say">亲爱的 夏老师</span><br>
                     <span class="say">自从我们认识以来的这段时间里，</span><br>
                     <span class="say">我心中的那份特殊感情一直在悄悄地生根发芽。</span><br>
-                    <span class="say">你的聪明和善良让我感到无比的钦佩。</span><br>
-                    <span class="say">我对你的感情已经不再仅仅停留在友谊的层面上。</span><br>
-                    <span class="say">我希望我们可以一起走向更深层次的关系，</span><br>
-                    <span class="say">如果你也愿意，</span><br>
-                    <span class="say">让我们一起勇敢地迈出这一步，</span><br>
-                    <span class="say">一起创造属于我们自己的美好未来。</span><br>
-                    <span class="say">期待着你的回应。</span><br>
-                    <span class="say">这段时间，我也深深地了解到你的善良、聪明和坚强。</span><br>
-                    <span class="say">你是一个特别的人，我真的很幸运能够认识你。</span><br>
+                    <span class="say">在我心中，你是那样地特别，</span><br>
+                    <span class="say">你的笑容让我感受到无尽的幸福，</span><br>
+                    <span class="say">你的聆听让我感到被理解和尊重。</span><br>
+                    <span class="say">和你在一起的时光总是那么美好而宝贵。</span><br>
+                    <span class="say">看到一起逛书店的couple，</span><br>
+                    <span class="say">看到去那家日料店迷路的人们，</span><br>
+                    <span class="say">看到会在剧场笑的很大声的人。</span><br>
+                    <span class="say">这种时候就会想到你，</span><br>
+                    <span class="say">幸福的记忆是不会消失的。</span><br>
                     <br>
-                    <span class="say">当然，我也理解我们之间的友谊很重要，</span><br>
-                    <span class="say">而且我希望我们可以一直保持这种美好的关系。</span><br>
-                    <span class="say">但是，我不想再隐瞒我的感情了，</span><br>
-                    <span class="say">因为你对我来说太特别了。</span><br>
-                    <span class="say">但取温暖随缘逝,向日葵花笑而存。</span><br>
-                    <span class="say"></span><br>
+                    <span class="say">我知道这段时间对你来说很艰难，</span><br>
+                    <span class="say">我的成长和经历告诉我，</span><br>
+                    <span class="say">不能再给你更多的困扰。</span><br>
+                    <span class="say">抱歉以这样的形式来表达我的内心!</span><br>
+                    <span class="say">また今度会うとき、</span><br>
+                    <span class="say">君が好きだと叫びたい！</span><br>
                     <br>
-                    <span class="say"><span class="space"></span> -- Your biggest fan.</span>
+                    <span class="say"><span class="space"></span> -- 一个想成为向日葵的人.</span>
                 </div>
             </div>
             <div id="clock-box">
                 <a href="http://www.ntlawyer.cc/index.php?cid=3&tid=350" target="_blank">@夏越</a> 与 <a
-                    href="https://www.sndtd.cn/about/list/8" target="_blank">@许劼</a> 认识的
+                    href="https://github.com/NoobCoderBigRoc" target="_blank">@许劼</a> 认识的
                 <div id="clock"></div>
             </div>
             <canvas id="canvas" width="1100" height="680"></canvas>
         </div>
-        <!-- <audio controls preload autoplay loop="true">
-            <source src="bgm2.ogg">
-        </audio> -->
     </div>
 
     <script>
@@ -152,7 +121,7 @@
 
             canvas.click(function (e) {
                 var sound = new Howl({
-                    src: ['./bgm2.mp3'],
+                    src: ['./bgm1.mp3'],
                     autoplay: true,
                     loop: true,
                     volume: 1,
